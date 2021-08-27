@@ -1,0 +1,28 @@
+{
+  "extends": "eslint-config-twg/tsconfig.json",
+  "include": ["**/*"],
+  "compilerOptions": {
+    "types": ["@types/jest"],
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": [
+          {
+            "validProperties": [
+              "margin-vertical",
+              "margin-horizontal",
+              "resize-mode",
+              "padding-vertical",
+              "padding-horizontal"
+            ]
+          }
+        ]
+      }
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+}

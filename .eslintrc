@@ -1,0 +1,16 @@
+{
+  "extends": ["@react-native-community", "plugin:@typescript-eslint/recommended", "prettier"],
+  "rules": {
+    "@typescript-eslint/unbound-method": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+    "no-shadow": "off",
+    "no-nested-ternary": "error",
+    "@typescript-eslint/no-unused-vars": 2,
+    "@typescript-eslint/no-shadow": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "no-console": 2
+  },
+  "globals": {
+    "__DEV__": "readonly"
+  }
+}
