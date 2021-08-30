@@ -1,15 +1,14 @@
-import React from "react";
-import { SafeAreaView, ScrollView, Text } from "react-native";
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '@/styles'
+import { RootNavigation } from '@/navigation'
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <Text> KUPA </Text>
-        <Text> DUPA </Text>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+    <ThemeProvider theme={theme}>
+      <RootNavigation />
+    </ThemeProvider>
+  )
+}
 
-export default App;
+export default App
