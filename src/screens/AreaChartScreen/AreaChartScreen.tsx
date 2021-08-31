@@ -15,6 +15,7 @@ export const AreaChartScreen = () => {
     <Container>
       <ChartHeader title={ChartsTitles.AREA_CHART} />
       <ChartsContainer>
+        {/*first chart, with sharp angles and border line*/}
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
@@ -27,7 +28,7 @@ export const AreaChartScreen = () => {
             <Grid />
           </AreaChart>
         </ChartContainer>
-
+        {/*second chart, with sharp angles, border line and circle decorators*/}
         <ChartContainer>
           <AreaChart
             yAccessor={({ item }) => item}
@@ -43,7 +44,7 @@ export const AreaChartScreen = () => {
             <Grid />
           </AreaChart>
         </ChartContainer>
-
+        {/*third chart, with rounded angles and gradient fill, without border line*/}
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
@@ -56,7 +57,7 @@ export const AreaChartScreen = () => {
             <Gradient />
           </AreaChart>
         </ChartContainer>
-
+        {/*fourth chart, with rounded angles, without grid*/}
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
@@ -67,7 +68,7 @@ export const AreaChartScreen = () => {
             svg={{ fill: 'rgba(234, 65, 144, 0.8)' }}
           />
         </ChartContainer>
-
+        {/*fifth chart, with curve shape 'step' type and border line*/}
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
@@ -80,7 +81,7 @@ export const AreaChartScreen = () => {
             <Line />
           </AreaChart>
         </ChartContainer>
-
+        {/*sixth chart, with two interpenetrating area charts */}
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
@@ -100,11 +101,11 @@ export const AreaChartScreen = () => {
             <Grid />
           </AreaChart>
         </ChartContainer>
-
+        {/*anti-pattern. Chart is no longer legible */}
         <ChartContainer>
           <MultipleAreaCharts />
         </ChartContainer>
-
+        {/*Stacked area chart */}
         <ChartContainer>
           <StackedAreaChartComponent />
         </ChartContainer>
