@@ -4,7 +4,7 @@ import { ChartContainer, ChartsContainer, Container } from './AreaChartScreen.st
 import { ChartsTitles } from '@/components/ChartHeader/types'
 import { AreaChart, Grid } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
-import { data, data4 } from '@/screens/AreaChartScreen/data'
+import { data, data4 } from '@/data/data'
 import { Decorator, Gradient, Line } from '@/screens/AreaChartScreen/chartAdds'
 import { MultipleAreaCharts } from '@/screens/AreaChartScreen/MultipleAreaCharts/MultipleAreaCharts'
 import { StyleSheet } from 'react-native'

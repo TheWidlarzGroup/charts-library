@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Home } from '@/screens/Home/Home'
 import { AreaChartScreen } from '@/screens/AreaChartScreen/AreaChartScreen'
-import { BarChart } from '@/screens/BarChart/BarChart'
+import { BarChartComponent } from '@/screens/BarChartComponent/BarChartComponent'
 import { LineChart } from '@/screens/LineChart/LineChart'
 import { PieChart } from '@/screens/PieChart/PieChart'
 import { ProgressCircle } from '@/screens/ProgressCircle/ProgressCircle'
@@ -29,7 +29,7 @@ export const GlobalNavigation = () => {
       />
       <GlobalStack.Screen
         name="BarChart"
-        component={BarChart}
+        component={BarChartComponent}
         options={{ gestureEnabled: false }}
       />
       <GlobalStack.Screen

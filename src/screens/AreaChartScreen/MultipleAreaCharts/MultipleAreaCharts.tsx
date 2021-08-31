@@ -1,6 +1,6 @@
 import React from 'react'
 import { AreaChart, Grid } from 'react-native-svg-charts'
-import { data, data2, data3 } from '@/screens/AreaChartScreen/data'
+import { data, data2, data3 } from '@/data/data'
 import { Line } from '@/screens/AreaChartScreen/chartAdds'
 import { StyleSheet } from 'react-native'
 

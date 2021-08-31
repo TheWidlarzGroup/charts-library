@@ -1,10 +1,9 @@
 import React from 'react'
-import { Container } from './StackedAreaChartComponent.styled'
-import { StackedAreaChart } from 'react-native-svg-charts'
-import * as shape from 'd3-shape'
-import { stackedAreaChartData } from '@/data/data'
+import { Container } from './StackedBarChartComponent.styled'
+import { StackedBarChart } from 'react-native-svg-charts'
+import { stackedBarChartData } from '@/data/data'
 
-export const StackedAreaChartComponent = () => {
+export const StackedBarChartComponent = () => {
   const colors = ['#8800cc', '#FF0000', '#0000FF', '#00FF00']
   const keys: ('apples' | 'bananas' | 'cherries' | 'dates')[] = [
     'apples',
@@ -15,13 +14,13 @@ export const StackedAreaChartComponent = () => {
 
   return (
     <Container>
-      <StackedAreaChart
+      <StackedBarChart
         style={{ height: 200, paddingVertical: 16 }}
-        data={stackedAreaChartData}
+        data={stackedBarChartData}
         keys={keys}
         colors={colors}
-        curve={shape.curveNatural}
         showGrid={false}
+        contentInset={{ top: 30, bottom: 30 }}
       />
     </Container>
   )
