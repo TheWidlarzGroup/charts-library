@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Home } from '@/screens/Home/Home'
-import { AreaChart } from '@/screens/AreaChart/AreaChart'
+import { AreaChartScreen } from '@/screens/AreaChartScreen/AreaChartScreen'
 import { BarChart } from '@/screens/BarChart/BarChart'
 import { LineChart } from '@/screens/LineChart/LineChart'
 import { PieChart } from '@/screens/PieChart/PieChart'
@@ -24,7 +24,7 @@ export const GlobalNavigation = () => {
       <GlobalStack.Screen name="Home" component={Home} options={{ gestureEnabled: false }} />
       <GlobalStack.Screen
         name="AreaChart"
-        component={AreaChart}
+        component={AreaChartScreen}
         options={{ gestureEnabled: false }}
       />
       <GlobalStack.Screen
