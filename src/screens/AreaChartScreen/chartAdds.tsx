@@ -1,14 +1,37 @@
 import { Circle, Defs, LinearGradient, Path, Stop } from 'react-native-svg'
 import React from 'react'
 
-export const Line = ({ line }: { line: string }) => (
-  <Path key={'line'} d={line} stroke={'rgb(0, 0, 0)'} fill={'none'} />
-)
+interface LineProps {
+  line: string
+}
 
-export const Decorator = ({ x, y, data }) => {
-  return data.map((value, index) => (
-    <Circle key={index} cx={x(index)} cy={y(value)} r={4} stroke={'rgb(0, 0, 0)'} fill={'white'} />
-  ))
+export const Line = (props: Partial<LineProps>) => {
+  const { line } = props as LineProps
+  return <Path key={'line'} d={line} stroke={'rgb(0, 0, 0)'} fill={'none'} />
+}
+
+interface DecoratorProps {
+  x: any
+  y: any
+  data: number[]
+}
+
+export const Decorator = (props: Partial<DecoratorProps>) => {
+  const { x, y, data } = props as DecoratorProps
+  return (
+    <>
+      {data?.map((value, index) => (
+        <Circle
+          key={index}
+          cx={x(index)}
+          cy={y(value)}
+          r={4}
+          stroke={'rgb(0, 0, 0)'}
+          fill={'white'}
+        />
+      ))}
+    </>
+  )
 }
 
 export const Gradient = () => (

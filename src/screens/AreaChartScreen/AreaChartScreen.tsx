@@ -23,7 +23,7 @@ export const AreaChartScreen = () => {
             gridMax={120}
             contentInset={{ top: 30, bottom: 30 }}
             svg={{ fill: 'rgba(94, 160, 113, 0.8)' }}>
-            <Line line={'line'} />
+            <Line />
             <Grid />
           </AreaChart>
         </ChartContainer>
@@ -38,7 +38,7 @@ export const AreaChartScreen = () => {
             gridMax={120}
             contentInset={{ top: 30, bottom: 30 }}
             svg={{ fill: 'rgba(255, 204, 0, 0.8)' }}>
-            <Line line={'line'} />
+            <Line />
             <Decorator />
             <Grid />
           </AreaChart>
@@ -77,7 +77,7 @@ export const AreaChartScreen = () => {
             curve={shape.curveStep}
             svg={{ fill: 'rgba(144, 165, 184, 0.8)' }}>
             <Grid />
-            <Line line={'line'} />
+            <Line />
           </AreaChart>
         </ChartContainer>
 

@@ -32,7 +32,12 @@ export const StackedAreaChartComponent = () => {
   ]
 
   const colors = ['#8800cc', '#FF0000', '#0000FF', '#00FF00']
-  const keys = ['apples', 'bananas', 'cherries', 'dates']
+  const keys: ('apples' | 'bananas' | 'cherries' | 'dates')[] = [
+    'apples',
+    'bananas',
+    'cherries',
+    'dates',
+  ]
 
   return (
     <Container>

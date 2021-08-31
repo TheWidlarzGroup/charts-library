@@ -28,6 +28,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.0.2",
+    "@types/d3-shape": "^3.0.2",
     "@types/node": "^16.7.4",
     "@types/react-native-svg-charts": "^5.0.9",
     "eslint-config-airbnb-typescript": "^12.3.1",
