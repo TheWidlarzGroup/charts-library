@@ -4,7 +4,7 @@ import { Home } from '@/screens/Home/Home'
 import { AreaChartScreen } from '@/screens/AreaChartScreen/AreaChartScreen'
 import { BarChartComponent } from '@/screens/BarChartComponent/BarChartComponent'
 import { LineChartComponent } from '@/screens/LineChartComponent/LineChartComponent'
-import { PieChart } from '@/screens/PieChart/PieChart'
+import { PieChartComponent } from '@/screens/PieChartComponent/PieChartComponent'
 import { ProgressCircle } from '@/screens/ProgressCircle/ProgressCircle'
 
 export type StackRoutes = {
@@ -39,7 +39,7 @@ export const GlobalNavigation = () => {
       />
       <GlobalStack.Screen
         name="PieChart"
-        component={PieChart}
+        component={PieChartComponent}
         options={{ gestureEnabled: false }}
       />
       <GlobalStack.Screen
