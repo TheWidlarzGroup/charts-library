@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { Home } from '@/screens/Home/Home'
 import { AreaChartScreen } from '@/screens/AreaChartScreen/AreaChartScreen'
 import { BarChartComponent } from '@/screens/BarChartComponent/BarChartComponent'
-import { LineChart } from '@/screens/LineChart/LineChart'
+import { LineChartComponent } from '@/screens/LineChartComponent/LineChartComponent'
 import { PieChart } from '@/screens/PieChart/PieChart'
 import { ProgressCircle } from '@/screens/ProgressCircle/ProgressCircle'
 
@@ -34,7 +34,7 @@ export const GlobalNavigation = () => {
       />
       <GlobalStack.Screen
         name="LineChart"
-        component={LineChart}
+        component={LineChartComponent}
         options={{ gestureEnabled: false }}
       />
       <GlobalStack.Screen

@@ -6,7 +6,7 @@ export const data3 = [
   -37, 61, 83, 47,
 ]
 export const data4 = [91, 32, -73, 86, 11, 25, 67, 78, -32, -12, 64]
-export const data5 = [10, 20, 60, 30, 5, 90, 21, 47, 68, 88, 96, 55]
+export const data5 = [10, 20, 60, 30, 5, 90, 21, 47, 68, 88, 96, 55, 10, 73]
 export const data6 = [
   {
     value: 50,
@@ -88,6 +88,10 @@ export const data7 = [
 ]
 
 export const data8 = [10, 20, 60, 30, 5, 90]
+export const data9 = [13, 4, 91, 67, 42, 27, 10, 20]
+export const data10 = [40, 83, 60, 30, 75, 90, 27, 52]
+export const data11 = [80, 60, 25, 48, 24, 67, 51, 12]
+export const data12 = [10, 20, 41, 4, 50, 33, 21, 47]
 
 export const stackedAreaChartData = [
   {
@@ -140,5 +144,53 @@ export const stackedBarChartData = [
     bananas: 480,
     cherries: 640,
     dates: 1400,
+  },
+]
+
+export const doubleLineChart = [
+  {
+    data: data9,
+    svg: {
+      stroke: 'red',
+      strokeWidth: 1,
+    },
+  },
+  {
+    data: data10,
+    svg: {
+      stroke: 'blue',
+      strokeWidth: 1,
+    },
+  },
+]
+
+export const quadrupleLineChart = [
+  {
+    data: data9,
+    svg: {
+      stroke: 'red',
+      strokeWidth: 1,
+    },
+  },
+  {
+    data: data10,
+    svg: {
+      stroke: 'blue',
+      strokeWidth: 1,
+    },
+  },
+  {
+    data: data11,
+    svg: {
+      stroke: 'orange',
+      strokeWidth: 1,
+    },
+  },
+  {
+    data: data12,
+    svg: {
+      stroke: 'green',
+      strokeWidth: 1,
+    },
   },
 ]
