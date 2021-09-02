@@ -8,6 +8,7 @@ import { Clips, Gradient, Shadow, DashedLine, DashedLineSteps } from './chartAdd
 import * as shape from 'd3-shape'
 import { LineChartWithAverage } from './LineChartWithAverage/LineChartWithAverage'
 import { MultipleLinesChart } from './MultipleLinesChart/MultipleLinesChart'
+import { MultipleLineChartWithAverage } from '@/screens/LineChartComponent/MultipleLineChartWithAverage/MultipleLineChartWithAverage'
 
 export const LineChartComponent = () => {
   const indexToClipFrom = 4
@@ -133,6 +134,9 @@ export const LineChartComponent = () => {
         </ChartContainer>
         <ChartContainer>
           <LineChartWithAverage />
+        </ChartContainer>
+        <ChartContainer>
+          <MultipleLineChartWithAverage />
         </ChartContainer>
       </ChartsContainer>
     </Container>

@@ -1,5 +1,15 @@
 import React from 'react'
-import Svg, { Defs, Path, LinearGradient, Stop, ClipPath, Rect, Circle } from 'react-native-svg'
+import Svg, {
+  Defs,
+  Path,
+  LinearGradient,
+  Stop,
+  ClipPath,
+  Rect,
+  Circle,
+  Line,
+  G,
+} from 'react-native-svg'
 
 interface LineProps {
   line: string
@@ -95,13 +105,15 @@ interface DecoratorProps {
   }[]
 }
 
+const min = 1
+const max = 10000000
+
+const uniqueKey = (index: number): number => {
+  return Math.floor(Math.random() * (max - min + 1)) + min + index
+}
+
 export const MultipleLinesChartDecorator = (props: Partial<DecoratorProps>) => {
   const { x, y, combinedData } = props as DecoratorProps
-  const min = 1
-  const max = 10000000
-  const uniqueKey = (index: number): number => {
-    return Math.floor(Math.random() * (max - min + 1)) + min + index
-  }
 
   return (
     <>
@@ -123,5 +135,72 @@ export const MultipleLinesChartDecorator = (props: Partial<DecoratorProps>) => {
           )
         })}
     </>
+  )
+}
+
+interface GridProps {
+  x: any
+  y: any
+  combinedData: {
+    data: number[]
+    svg: { strokeWidth: number; strokeDasharray?: number[] }
+  }[]
+  ticks: number[]
+  belowChart: boolean
+}
+
+export const CustomGrid = (props: Partial<GridProps>) => {
+  const { x, y, combinedData, ticks } = props as GridProps
+
+  return (
+    <G>
+      {
+        // Horizontal grid
+        ticks.map((tick) => (
+          <Line
+            key={tick}
+            x1={'0%'}
+            x2={'100%'}
+            y1={y(tick)}
+            y2={y(tick)}
+            stroke={'rgba(0,0,0,0.2)'}
+          />
+        ))
+      }
+      {
+        // Vertical grid
+        combinedData &&
+          combinedData[0].data.map((_, index) => (
+            <Line
+              key={uniqueKey(index)}
+              y1={'0%'}
+              y2={'100%'}
+              x1={x(index)}
+              x2={x(index)}
+              stroke={'rgba(0,0,0,0.2)'}
+            />
+          ))
+      }
+    </G>
+  )
+}
+
+export const VerticalGrid = (props: Partial<GridProps>) => {
+  const { x, combinedData } = props as GridProps
+
+  return (
+    <G>
+      {combinedData &&
+        combinedData[0].data.map((_, index) => (
+          <Line
+            key={uniqueKey(index)}
+            y1={'0%'}
+            y2={'100%'}
+            x1={x(index)}
+            x2={x(index)}
+            stroke={'rgba(0,0,0,0.2)'}
+          />
+        ))}
+    </G>
   )
 }

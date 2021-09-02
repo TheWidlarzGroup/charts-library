@@ -4,4 +4,5 @@ export enum ChartsTitles {
   LINE_CHART = 'Line Chart',
   PIE_CHART = 'Pie Chart',
   PROGRESS_CIRCLE = 'Progress Circle',
+  AXES = 'Axes',
 }

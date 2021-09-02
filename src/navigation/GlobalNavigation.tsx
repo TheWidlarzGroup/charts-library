@@ -5,7 +5,8 @@ import { AreaChartScreen } from '@/screens/AreaChartScreen/AreaChartScreen'
 import { BarChartComponent } from '@/screens/BarChartComponent/BarChartComponent'
 import { LineChartComponent } from '@/screens/LineChartComponent/LineChartComponent'
 import { PieChartComponent } from '@/screens/PieChartComponent/PieChartComponent'
-import { ProgressCircle } from '@/screens/ProgressCircle/ProgressCircle'
+import { ProgressCircleComponent } from '@/screens/ProgressCircleComponent/ProgressCircleComponent'
+import { Axes } from '@/screens/Axes/Axes'
 
 export type StackRoutes = {
   Home: undefined
@@ -14,6 +15,7 @@ export type StackRoutes = {
   LineChart: undefined
   PieChart: undefined
   ProgressCircle: undefined
+  Axes: undefined
 }
 
 const GlobalStack = createStackNavigator<StackRoutes>()
@@ -44,9 +46,10 @@ export const GlobalNavigation = () => {
       />
       <GlobalStack.Screen
         name="ProgressCircle"
-        component={ProgressCircle}
+        component={ProgressCircleComponent}
         options={{ gestureEnabled: false }}
       />
+      <GlobalStack.Screen name="Axes" component={Axes} options={{ gestureEnabled: false }} />
     </GlobalStack.Navigator>
   )
 }

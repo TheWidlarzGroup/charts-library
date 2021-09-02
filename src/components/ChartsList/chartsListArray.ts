@@ -19,4 +19,8 @@ export const chartsListArray: { title: string; link: string }[] = [
     title: 'Progress Circle',
     link: 'ProgressCircle',
   },
+  {
+    title: 'Axes',
+    link: 'Axes',
+  },
 ]
