@@ -7,6 +7,7 @@ import { LineChartComponent } from '@/screens/LineChartComponent/LineChartCompon
 import { PieChartComponent } from '@/screens/PieChartComponent/PieChartComponent'
 import { ProgressCircleComponent } from '@/screens/ProgressCircleComponent/ProgressCircleComponent'
 import { Axes } from '@/screens/Axes/Axes'
+import { ScatterChart } from '@/screens/ScatterChart/ScatterChart'
 
 export type StackRoutes = {
   Home: undefined
@@ -16,6 +17,7 @@ export type StackRoutes = {
   PieChart: undefined
   ProgressCircle: undefined
   Axes: undefined
+  ScatterChart: undefined
 }
 
 const GlobalStack = createStackNavigator<StackRoutes>()
@@ -50,6 +52,11 @@ export const GlobalNavigation = () => {
         options={{ gestureEnabled: false }}
       />
       <GlobalStack.Screen name="Axes" component={Axes} options={{ gestureEnabled: false }} />
+      <GlobalStack.Screen
+        name="ScatterChart"
+        component={ScatterChart}
+        options={{ gestureEnabled: false }}
+      />
     </GlobalStack.Navigator>
   )
 }

@@ -23,4 +23,8 @@ export const chartsListArray: { title: string; link: string }[] = [
     title: 'Axes',
     link: 'Axes',
   },
+  {
+    title: 'Scatter Chart',
+    link: 'ScatterChart',
+  },
 ]
