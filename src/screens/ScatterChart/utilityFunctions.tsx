@@ -1,5 +1,9 @@
 import React from 'react'
 import { Path } from 'react-native-svg'
+import {
+  BlackShirt,
+  WhiteShirt,
+} from '@/screens/ScatterChart/FootballPitch/PlayersMap/PlayersMap.styled'
 
 const CIRCLE_RADIUS = 3
 
@@ -75,4 +79,111 @@ export const generateData = (dotsNumber: number) => {
       y: Math.floor(Math.random() * (max - min + 1)) + min,
     }
   })
+}
+
+const PLAYER_RADIUS = 5
+
+export const drawPlayerCircle = (x: number, y: number, radius: number): string => {
+  return `M ${x}, ${y} a ${radius},${radius} 0 1,1 ${2 * radius},0 a ${radius},${radius} 0 1,1 -${
+    2 * radius
+  },0`
+}
+
+export const renderFootballCirclesSvg = (
+  componentWidth: number,
+  componentHeight: number,
+  firstTeam?: {
+    x: number
+    y: number
+  }[],
+  secondTeam?: {
+    x: number
+    y: number
+  }[]
+) => {
+  //makes 1 points in X scale equal to 1% of the image width
+  const xProportion = componentWidth / 100
+  //scale size of our working area from image size, to court size - thanks to that, X coordinate value in scale 1-100 will be always placed on the court
+  const xDiffProportion = 0.792
+  //move our working area from the left edge of the image, exactly to the left line of the court
+  const xDiff = xProportion * 10.4 - PLAYER_RADIUS
+  //makes 1 points in X scale equal to 1% of the image width
+  const yProportion = componentHeight / 100
+  //scale size of our working area from image size, to court size - thanks to that, Y coordinate value in scale 1-100 will be always placed on the court
+  const yDiffProportion = 0.889
+  //move our working area from the top edge of the image, exactly to the left line of the court
+  const yDiff = yProportion * 5.5
+
+  const pathWhite =
+    firstTeam &&
+    firstTeam
+      .map((item) => {
+        const x = item.x * xDiffProportion * xProportion + xDiff
+        const y = item.y * yDiffProportion * yProportion + yDiff
+        return drawPlayerCircle(x, y, PLAYER_RADIUS)
+      })
+      .join()
+
+  const pathBlack =
+    secondTeam &&
+    secondTeam
+      .map((item) => {
+        const x = item.x * xDiffProportion * xProportion + xDiff
+        const y = item.y * yDiffProportion * yProportion + yDiff
+        return drawPlayerCircle(x, y, PLAYER_RADIUS)
+      })
+      .join()
+
+  return (
+    <>
+      <Path d={pathWhite} fill={'white'} />
+      <Path d={pathBlack} fill={'black'} />
+    </>
+  )
+}
+
+export const renderFootballPlayers = (
+  componentWidth: number,
+  componentHeight: number,
+  iconWidth: number,
+  firstTeam?: {
+    x: number
+    y: number
+  }[],
+  secondTeam?: {
+    x: number
+    y: number
+  }[]
+) => {
+  //makes 1 points in X scale equal to 1% of the image width
+  const xProportion = componentWidth / 100
+  //scale size of our working area from image size, to court size - thanks to that, X coordinate value in scale 1-100 will be always placed on the court
+  const xDiffProportion = 0.792
+  //move our working area from the left edge of the image, exactly to the left line of the court
+  const xDiff = xProportion * 10.4 - iconWidth / 2
+  //makes 1 points in X scale equal to 1% of the image width
+  const yProportion = componentHeight / 100
+  //scale size of our working area from image size, to court size - thanks to that, Y coordinate value in scale 1-100 will be always placed on the court
+  const yDiffProportion = 0.889
+  //move our working area from the top edge of the image, exactly to the left line of the court
+  const yDiff = yProportion * 5.5 - iconWidth / 2
+
+  return (
+    <>
+      {firstTeam &&
+        firstTeam.map((item) => {
+          const x = item.x * xDiffProportion * xProportion + xDiff
+          const y = item.y * yDiffProportion * yProportion + yDiff
+
+          return <WhiteShirt left={x} top={y} />
+        })}
+      {secondTeam &&
+        secondTeam.map((item) => {
+          const x = item.x * xDiffProportion * xProportion + xDiff
+          const y = item.y * yDiffProportion * yProportion + yDiff
+
+          return <BlackShirt left={x} top={y} />
+        })}
+    </>
+  )
 }
