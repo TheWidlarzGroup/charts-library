@@ -1,6 +1,9 @@
 import React, { VFC } from 'react'
 import Svg from 'react-native-svg'
-import { renderCirclesSvg } from '@/screens/ScatterChart/utilityFunctions'
+import {
+  renderBlackCirclesSvg,
+  renderColoredCirclesSvg,
+} from '@/screens/ScatterChart/utilityFunctions'
 import { XAxis, YAxis } from 'react-native-svg-charts'
 import { ChartContainer, CustomChart } from './ScatterChartExample.styled'
 import { CustomGrid } from '@/screens/ScatterChart/chartsAdds'
@@ -11,9 +14,10 @@ interface Props {
     x: number
     y: number
   }[]
+  colored?: boolean
 }
 
-export const ScatterChartExample: VFC<Props> = ({ data }) => {
+export const ScatterChartExample: VFC<Props> = ({ data, colored }) => {
   const xData = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
   const yData = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
   const axisSvg = {
@@ -49,7 +53,9 @@ export const ScatterChartExample: VFC<Props> = ({ data }) => {
               left: -componentWidth / 100,
               top: -componentHeight / 100,
             }}>
-            {renderCirclesSvg(data, componentWidth, componentHeight)}
+            {colored
+              ? renderColoredCirclesSvg(data, componentWidth, componentHeight)
+              : renderBlackCirclesSvg(data, componentWidth, componentHeight)}
           </Svg>
         </CustomChart>
         <XAxis

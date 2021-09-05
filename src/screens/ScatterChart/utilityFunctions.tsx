@@ -22,7 +22,28 @@ export const drawCircle = (
   } a ${radius},${radius} 0 1,1 ${2 * radius},0 a ${radius},${radius} 0 1,1 -${2 * radius},0`
 }
 
-export const renderCirclesSvg = (
+export const renderBlackCirclesSvg = (
+  data: {
+    x: number
+    y: number
+  }[],
+  componentWidth: number,
+  componentHeight: number
+) => {
+  const path = data
+    .map((item) => {
+      return drawCircle(item.x, item.y, CIRCLE_RADIUS, componentWidth, componentHeight)
+    })
+    .join()
+
+  return (
+    <>
+      <Path d={path} fill={'black'} />
+    </>
+  )
+}
+
+export const renderColoredCirclesSvg = (
   data: {
     x: number
     y: number
