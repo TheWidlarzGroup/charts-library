@@ -25,7 +25,7 @@ export const BarChartComponent = () => {
       <ChartsContainer>
         <ChartContainer>
           <BarChart
-            style={{ height: 250 }}
+            style={{ height: 200 }}
             gridMin={-100}
             gridMax={120}
             data={data}
@@ -36,9 +36,9 @@ export const BarChartComponent = () => {
         </ChartContainer>
         <ChartContainer>
           <BarChart
-            style={{ height: 250 }}
+            style={{ height: 200 }}
             spacingInner={0.4}
-            spacingOuter={0}
+            spacingOuter={0.1}
             gridMin={-100}
             gridMax={120}
             data={data}
@@ -50,7 +50,7 @@ export const BarChartComponent = () => {
         </ChartContainer>
         <ChartContainer>
           <BarChart
-            style={{ height: 250 }}
+            style={{ height: 200 }}
             spacingInner={0.1}
             gridMin={-10}
             gridMax={120}
@@ -95,13 +95,13 @@ export const BarChartComponent = () => {
         </ChartContainer>
         <ChartContainer>
           <BarChart
-            style={{ height: 200, width: 400, marginVertical: 20 }}
+            style={{ height: 200, marginVertical: 20 }}
             horizontal={true}
             spacingInner={0.1}
             gridMin={0}
-            gridMax={120}
+            gridMax={100}
             data={data8}
-            svg={{ fill: 'blue' }}
+            svg={{ fill: 'lightblue' }}
             contentInset={{ top: 30, bottom: 30 }}>
             <Grid direction={Grid.Direction.VERTICAL} />
           </BarChart>

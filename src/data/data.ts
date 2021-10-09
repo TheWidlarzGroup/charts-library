@@ -46,7 +46,7 @@ export const data7 = [
     svg: {
       stroke: 'red',
       strokeWidth: 1,
-      fill: 'white',
+      fill: 'transparent',
       strokeDasharray: [30, 5],
     },
   },
@@ -55,7 +55,7 @@ export const data7 = [
     svg: {
       stroke: 'orange',
       strokeWidth: 2,
-      fill: 'white',
+      fill: 'transparent',
     },
   },
   {
@@ -63,7 +63,7 @@ export const data7 = [
     svg: {
       stroke: 'purple',
       strokeWidth: 2,
-      fill: 'white',
+      fill: 'transparent',
       strokeDasharray: [4, 2],
     },
   },
@@ -72,7 +72,7 @@ export const data7 = [
     svg: {
       stroke: 'blue',
       strokeWidth: 1,
-      fill: 'white',
+      fill: 'transparent',
       strokeDasharray: [14, 4],
     },
   },
@@ -81,7 +81,7 @@ export const data7 = [
     svg: {
       stroke: 'green',
       strokeWidth: 2,
-      fill: 'white',
+      fill: 'transparent',
       strokeDasharray: [2, 1],
     },
   },
@@ -96,27 +96,27 @@ export const data12 = [10, 20, 41, 4, 50, 33, 21, 47]
 export const stackedAreaChartData = [
   {
     apples: 1840,
-    bananas: 1920,
+    pears: 1920,
     cherries: 960,
-    dates: 400,
+    plums: 400,
   },
   {
     apples: 1600,
-    bananas: 1440,
+    pears: 1440,
     cherries: 960,
-    dates: 400,
+    plums: 400,
   },
   {
     apples: 640,
-    bananas: 960,
+    pears: 960,
     cherries: 1640,
-    dates: 400,
+    plums: 400,
   },
   {
     apples: 3320,
-    bananas: 480,
+    pears: 480,
     cherries: 640,
-    dates: 400,
+    plums: 400,
   },
 ]
 

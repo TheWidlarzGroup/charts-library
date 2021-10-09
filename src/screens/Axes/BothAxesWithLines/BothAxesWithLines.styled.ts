@@ -45,7 +45,7 @@ export const VerticalArrow = styled.View`
   width: 5px;
   position: absolute;
   left: 5.5px;
-  top: -4px;
+  top: 7px;
   border-left-width: 1px;
   border-left-color: grey;
   border-top-width: 1px;

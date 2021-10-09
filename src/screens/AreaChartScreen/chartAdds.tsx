@@ -7,16 +7,16 @@ interface LineProps {
 
 export const Line = (props: Partial<LineProps>) => {
   const { line } = props as LineProps
-  return <Path key={'line'} d={line} stroke={'rgb(0, 0, 0)'} fill={'none'} />
+  return <Path key={'line'} d={line} stroke={'#0000BF'} fill={'none'} />
 }
 
 interface DecoratorProps {
-  x: any
-  y: any
+  x: (arg: number) => number
+  y: (arg: number) => number
   data: number[]
 }
 
-export const Decorator = (props: Partial<DecoratorProps>) => {
+export const Dots = (props: Partial<DecoratorProps>) => {
   const { x, y, data } = props as DecoratorProps
   return (
     <>

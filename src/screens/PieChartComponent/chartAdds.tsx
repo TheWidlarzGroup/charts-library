@@ -1,8 +1,13 @@
 import React from 'react'
 import { Circle, Line, G, Text } from 'react-native-svg'
+import { PieChartData } from 'react-native-svg-charts'
 
 interface LabelsProps {
-  slices: any[]
+  slices: {
+    pieCentroid: number[]
+    labelCentroid: number[]
+    data: PieChartData
+  }[]
 }
 
 export const Labels = (props: Partial<LabelsProps>) => {
@@ -18,11 +23,11 @@ export const Labels = (props: Partial<LabelsProps>) => {
               y1={labelCentroid[1]}
               x2={pieCentroid[0]}
               y2={pieCentroid[1]}
-              stroke={data.svg.fill}
+              stroke={data?.svg && data.svg.fill}
             />
 
             <G x={labelCentroid[0]} y={labelCentroid[1]}>
-              <Circle r={22} fill={data.svg.fill} />
+              <Circle r={22} fill={data?.svg && data.svg.fill} />
               <Circle r={17} fill={'white'} />
               <Text
                 key={index}

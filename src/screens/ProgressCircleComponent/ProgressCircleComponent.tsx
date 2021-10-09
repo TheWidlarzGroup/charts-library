@@ -16,16 +16,27 @@ export const Gradient = () => (
   <Defs>
     <LinearGradient id={'gradient'} x1={'0%'} y1={'0%'} x2={'0%'} y2={'100%'}>
       <Stop offset={'0%'} stopColor={'rgb(194, 65, 244)'} stopOpacity={0.8} />
-      <Stop offset={'100%'} stopColor={'rgb(134, 65, 244)'} stopOpacity={0.1} />
+      <Stop offset={'100%'} stopColor={'rgb(134, 65, 244)'} stopOpacity={0.2} />
     </LinearGradient>
   </Defs>
 )
 
 export const ProgressCircleComponent = () => {
+  const maxSpeed = 400
+  const speed = 234
+  const calculateSpeedForProgress = (speed: number, maxSpeed: number) => {
+    return speed / maxSpeed
+  }
+
+  const calculatedProgress = calculateSpeedForProgress(speed, maxSpeed)
+
   return (
     <Container>
       <ChartHeader title={ChartsTitles.PROGRESS_CIRCLE} />
       <ChartsContainer>
+        <ChartContainer>
+          <ProgressCircle style={{ height: 200 }} progress={0.6} progressColor={'rgb(192, 0, 0)'} />
+        </ChartContainer>
         <ChartContainer>
           <ProgressCircle
             style={{ height: 200 }}
@@ -33,15 +44,6 @@ export const ProgressCircleComponent = () => {
             progressColor={'rgb(134, 65, 244)'}
             startAngle={-Math.PI}
             endAngle={Math.PI}
-          />
-        </ChartContainer>
-        <ChartContainer>
-          <ProgressCircle
-            style={{ height: 200 }}
-            progress={0.6}
-            progressColor={'rgb(192, 0, 0)'}
-            startAngle={-Math.PI * 2}
-            endAngle={Math.PI * 2}
           />
         </ChartContainer>
         <ChartContainer>
@@ -82,7 +84,7 @@ export const ProgressCircleComponent = () => {
         <ChartContainer>
           <ProgressCircle
             style={{ height: 200 }}
-            progress={0.6}
+            progress={calculatedProgress}
             progressColor={'url(#gradient)'}
             backgroundColor={'rgba(194, 65, 244, 0.1)'}
             strokeWidth={7}
@@ -90,17 +92,17 @@ export const ProgressCircleComponent = () => {
             endAngle={Math.PI / 2}>
             <Gradient />
             <Text
-              x={-0.5}
-              y={-10}
+              x={1}
+              y={-12}
               fill={'black'}
               textAnchor={'middle'}
               alignmentBaseline={'middle'}
-              fontSize={33}
+              fontSize={27}
               fontWeight={'normal'}
               stroke={'white'}
               opacity={'1'}
               strokeWidth={0.4}>
-              60%
+              {`${speed} km/h`}
             </Text>
           </ProgressCircle>
         </ChartContainer>

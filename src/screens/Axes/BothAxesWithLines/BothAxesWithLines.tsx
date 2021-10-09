@@ -16,7 +16,7 @@ export const BothAxesWithLines = () => {
 
   return (
     <SafeAreaView
-      style={{ flexDirection: 'row', flex: 1 }}
+      style={{ flexDirection: 'row', flex: 1, marginBottom: 20 }}
       onLayout={(event) => {
         const { width } = event.nativeEvent.layout
         setComponentWidth(width)
@@ -35,7 +35,7 @@ export const BothAxesWithLines = () => {
         formatLabel={(value) => `${value} km`}
       />
       <ChartContainer>
-        <LineChartWithAverage fullGrid />
+        <LineChartWithAverage />
         <XAxis
           style={{ marginHorizontal: -10, width: componentWidth, marginTop: 10 }}
           data={data2}

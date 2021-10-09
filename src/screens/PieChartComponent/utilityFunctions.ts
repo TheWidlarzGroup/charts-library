@@ -27,7 +27,7 @@ export const getPieChartDataSteps = () => {
   const keys = ['google', 'facebook', 'linkedin', 'youtube', 'Twitter']
   const values = [15, 25, 35, 45, 55]
   const colors = ['#600080', '#9900cc', '#c61aff', '#d966ff', '#ecb3ff']
-  return keys.map((key, index) => {
+  return values.map((key, index) => {
     return {
       key,
       value: values[index],

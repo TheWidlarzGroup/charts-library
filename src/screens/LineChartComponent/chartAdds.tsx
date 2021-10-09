@@ -69,27 +69,16 @@ export const DashedLineSteps = (props: Partial<LineProps>) => {
 }
 
 interface ClipProps {
-  x: any
-  width: number
+  x: (arg: number) => number
   indexToClipFrom: number
 }
 
 export const Clips = (props: Partial<ClipProps>) => {
-  const { x, width, indexToClipFrom } = props
+  const { x, indexToClipFrom } = props as ClipProps
   return (
-    <Defs key={'clips'}>
-      <ClipPath id="clip-path-1">
-        <Rect x={'0'} y={'0'} width={x(indexToClipFrom)} height={'100%'} />
-      </ClipPath>
-      <ClipPath id={'clip-path-2'}>
-        <Rect
-          x={x(indexToClipFrom)}
-          y={'0'}
-          width={width && width - x(indexToClipFrom)}
-          height={'100%'}
-        />
-      </ClipPath>
-    </Defs>
+    <ClipPath id="clip-path-1">
+      <Rect x={'0'} y={'0'} width={x(indexToClipFrom)} height={'100%'} />
+    </ClipPath>
   )
 }
 

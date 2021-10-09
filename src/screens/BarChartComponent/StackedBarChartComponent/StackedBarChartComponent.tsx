@@ -4,7 +4,7 @@ import { StackedBarChart } from 'react-native-svg-charts'
 import { stackedBarChartData } from '@/data/data'
 
 export const StackedBarChartComponent = () => {
-  const colors = ['#8800cc', '#FF0000', '#0000FF', '#00FF00']
+  const colors = ['#142459', '#176BA0', '#19AADE', '#1AC9E6']
   const keys: ('apples' | 'bananas' | 'cherries' | 'dates')[] = [
     'apples',
     'bananas',

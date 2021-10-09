@@ -12,4 +12,5 @@ export const ChartsContainer = styled.ScrollView`
 export const ChartContainer = styled.SafeAreaView`
   flex: 1;
   margin-vertical: ${({ theme }) => theme.spacing.xl}px;
+  padding-vertical: 50px;
 `

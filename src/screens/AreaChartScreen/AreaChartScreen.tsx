@@ -4,8 +4,8 @@ import { ChartContainer, ChartsContainer, Container } from './AreaChartScreen.st
 import { ChartsTitles } from '@/components/ChartHeader/types'
 import { AreaChart, Grid } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
-import { data, data4 } from '@/data/data'
-import { Decorator, Gradient, Line } from '@/screens/AreaChartScreen/chartAdds'
+import { data } from '@/data/data'
+import { Dots, Gradient, Line } from '@/screens/AreaChartScreen/chartAdds'
 import { MultipleAreaCharts } from '@/screens/AreaChartScreen/MultipleAreaCharts/MultipleAreaCharts'
 import { StyleSheet } from 'react-native'
 import { StackedAreaChartComponent } from '@/screens/AreaChartScreen/StackedAreaChartComponent/StackedAreaChartComponent'
@@ -17,37 +17,41 @@ export const AreaChartScreen = () => {
       <ChartsContainer>
         {/*first chart, with sharp angles and border line*/}
         <ChartContainer>
-          <AreaChart
-            style={{ height: 200 }}
-            data={data}
-            gridMin={-80}
-            gridMax={120}
-            contentInset={{ top: 30, bottom: 30 }}
-            svg={{ fill: 'rgba(94, 160, 113, 0.8)' }}>
-            <Line />
-            <Grid />
-          </AreaChart>
+          <AreaChart style={{ height: 200 }} data={data} svg={{ fill: '#ADD8E6' }} />
         </ChartContainer>
         {/*second chart, with sharp angles, border line and circle decorators*/}
         <ChartContainer>
           <AreaChart
-            yAccessor={({ item }) => item}
-            xAccessor={({ index }) => index}
             style={{ height: 200 }}
-            data={data4}
-            gridMin={-80}
+            data={data}
+            gridMin={-100}
             gridMax={120}
             contentInset={{ top: 30, bottom: 30 }}
-            svg={{ fill: 'rgba(255, 204, 0, 0.8)' }}>
-            <Line />
-            <Decorator />
+            svg={{ fill: '#ADD8E6' }}>
             <Grid />
+            <Line />
+            <Dots />
+          </AreaChart>
+        </ChartContainer>
+        <ChartContainer>
+          <AreaChart
+            style={{ height: 200 }}
+            data={data}
+            start={120}
+            gridMin={-100}
+            gridMax={120}
+            contentInset={{ top: 30, bottom: 30 }}
+            svg={{ fill: '#ADD8E6' }}>
+            <Grid />
+            <Line />
+            <Dots />
           </AreaChart>
         </ChartContainer>
         {/*third chart, with rounded angles and gradient fill, without border line*/}
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
+            gridMin={-100}
             gridMax={120}
             data={data}
             contentInset={{ top: 30, bottom: 30 }}
@@ -61,6 +65,7 @@ export const AreaChartScreen = () => {
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
+            gridMin={-100}
             gridMax={120}
             data={data}
             contentInset={{ top: 30, bottom: 30 }}
@@ -72,11 +77,12 @@ export const AreaChartScreen = () => {
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
+            gridMin={-100}
             gridMax={120}
             data={data}
             contentInset={{ top: 30, bottom: 30 }}
             curve={shape.curveStep}
-            svg={{ fill: 'rgba(144, 165, 184, 0.8)' }}>
+            svg={{ fill: 'rgba(134, 65, 244, 0.5)' }}>
             <Grid />
             <Line />
           </AreaChart>
@@ -85,6 +91,7 @@ export const AreaChartScreen = () => {
         <ChartContainer>
           <AreaChart
             style={{ height: 200 }}
+            gridMin={-100}
             gridMax={120}
             data={data}
             contentInset={{ top: 30, bottom: 30 }}
@@ -93,6 +100,7 @@ export const AreaChartScreen = () => {
           />
           <AreaChart
             style={StyleSheet.absoluteFill}
+            gridMin={-100}
             gridMax={120}
             data={[...data].reverse()}
             contentInset={{ top: 30, bottom: 30 }}

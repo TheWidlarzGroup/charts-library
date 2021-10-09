@@ -9,4 +9,6 @@ export const ChartsContainer = styled.ScrollView`
   padding-horizontal: ${({ theme }) => theme.spacing.m}px;
 `
 
-export const ChartContainer = styled.SafeAreaView``
+export const ChartContainer = styled.SafeAreaView`
+  padding-vertical: 50px;
+`

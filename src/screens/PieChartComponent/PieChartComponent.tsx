@@ -34,7 +34,7 @@ export const PieChartComponent = () => {
             style={{ width: 300, height: 300 }}
             data={pieChartDataRounded}
             innerRadius={35}
-            outerRadius={75}
+            outerRadius={70}
             labelRadius={120}
             sort={(a, b) => b.key - a.key}>
             <Labels />

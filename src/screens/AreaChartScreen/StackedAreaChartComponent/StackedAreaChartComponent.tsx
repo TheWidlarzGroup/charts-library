@@ -4,24 +4,20 @@ import { StackedAreaChart } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
 import { stackedAreaChartData } from '@/data/data'
 
+type Keys = ('apples' | 'pears' | 'cherries' | 'plums')[]
+
 export const StackedAreaChartComponent = () => {
-  const colors = ['#8800cc', '#FF0000', '#0000FF', '#00FF00']
-  const keys: ('apples' | 'bananas' | 'cherries' | 'dates')[] = [
-    'apples',
-    'bananas',
-    'cherries',
-    'dates',
-  ]
+  const colors = ['#142459', '#176BA0', '#19AADE', '#1AC9E6']
+  const keys: Keys = ['apples', 'pears', 'cherries', 'plums']
 
   return (
     <Container>
       <StackedAreaChart
-        style={{ height: 200, paddingVertical: 16 }}
+        style={{ height: 150, paddingVertical: 16 }}
         data={stackedAreaChartData}
         keys={keys}
         colors={colors}
         curve={shape.curveNatural}
-        showGrid={false}
       />
     </Container>
   )

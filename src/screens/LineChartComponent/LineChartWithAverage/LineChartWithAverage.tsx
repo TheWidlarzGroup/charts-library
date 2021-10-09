@@ -26,7 +26,6 @@ export const LineChartWithAverage: VFC<Props> = ({ horizontalGrid, verticalGrid,
           data={dataWithAverageValue}
           curve={shape.curveNatural}
           svg={{
-            strokeWidth: 2,
             stroke: 'url(#gradient)',
           }}
           contentInset={{ top: 20, bottom: 20 }}>

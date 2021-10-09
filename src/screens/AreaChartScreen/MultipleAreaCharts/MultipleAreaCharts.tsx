@@ -8,7 +8,7 @@ export const MultipleAreaCharts = () => {
   return (
     <>
       <AreaChart
-        style={{ height: 300 }}
+        style={{ height: 200 }}
         data={data}
         gridMin={-120}
         gridMax={120}
@@ -25,7 +25,6 @@ export const MultipleAreaCharts = () => {
         contentInset={{ top: 30, bottom: 30 }}
         svg={{ fill: 'rgba(215, 204, 0, 0.8)' }}>
         <Line line={'line'} />
-        <Grid />
       </AreaChart>
       <AreaChart
         style={StyleSheet.absoluteFill}
@@ -35,7 +34,6 @@ export const MultipleAreaCharts = () => {
         contentInset={{ top: 30, bottom: 30 }}
         svg={{ fill: 'rgba(94, 20, 113, 0.8)' }}>
         <Line line={'line'} />
-        <Grid />
       </AreaChart>
     </>
   )

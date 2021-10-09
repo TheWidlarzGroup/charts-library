@@ -50,10 +50,6 @@ export const MultipleLinesChart = () => {
           gridMin={-20}
           gridMax={120}
           data={quadrupleLineChart}
-          svg={{
-            strokeWidth: 2,
-            stroke: 'url(#gradient)',
-          }}
           contentInset={{ top: 20, bottom: 20 }}>
           <Grid />
           <MultipleLinesChartDecorator combinedData={quadrupleLineChart} />
